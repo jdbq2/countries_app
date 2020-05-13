@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Cinzel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Country Info App</title>
+    
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="header-container">
+        <figure class="header-logo-container">
+          <img src="./Assets/pngocean.com (1).png" alt="logo country info project" />
+        </figure>
+        <h3 class="header-leabel">
+          Project created to give info about all the countries of the world
+        </h3>
+      </header>
+      <div class="side-bar">
+        <h2 class="country-list-title">Country List</h2>
+        <div class="filter-box">
+          <label for="Subregion">Filter the countries by Subregion: </label>
+          <select name="Subregion" id="subregions">
+            <option value="America">America</option>
+            <option value="America">Europe</option>
+            <option value="America">Asia</option>
+            <option value="America">Africa</option>
+            <option value="America">Oceania</option>
+          </select>
+        </div>
+        <div class="side-bar-list-container">
+          <ul class="list">
+            <li class="list-item"><img src="./Assets/pngocean.com (1).png" alt="country-flag"><a href="#">Country Name</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="search-container">
+                  <h1 class="main-content-title">
+                    Discover a Country, discover the world.
+        </h1>
+        <input type="text" class="search-bar" placeholder="Write a Country Name!" />
+        </div>
+        <h2 class="region-title"> America´s</h2>
+        <section id="Americas" class="subregion-container">
+          <div class="general-country-container">
+            <figure class="country-flag-container">
+              <img src="./Assets/pngocean.com (1).png" alt="country name flag" />
+            </figure>
+            <h3 class="country-name">Country Name</h2>
+          </div>
+        </section>  
+        <h2 class="region-title"> Europe</h2>
+        <section id="Europe" class="subregion-container">
+
+        </section>
+        <h2 class="region-title"> Asia</h2>
+        <section id="Asia" class="subregion-container">
+                    
+        </section>
+        <h2 class="region-title"> Oceania</h2>
+        <section id="Oceania" class="subregion-container">
+                    
+        </section>
+        <h2 class="region-title"> Africa</h2>
+        <section id="Africa" class="subregion-container">
+                    
+        </section>
+      </div>
+      <div class="search-result-container">
+        <figure class="country-flag-container">
+          <img src="" alt="country name flag" />
+        </figure>
+        <h2 class="country-name">Country Name</h2>
+        <div class="country-details">
+          <ul class="country-details-container">
+            <li class="country-details-item">Capital: capital</li>
+            <li class="country-details-item">Lenguage Name: xxxxxx</li>
+            <li class="country-details-item">Currency Name: xxxxx</li>
+            <li class="country-details-item">Population: xxxxx</li>
+            <li class="country-details-item">Area (km2): xxxxx</li>
+            <li class="country-details-item">Subregion: xxxxx</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="footer">
+        Developed by Juan Diego Bohorquez as a basic programming challenge
+      </footer>
+    </div>
+  </body>
+</html>
