@@ -11,6 +11,10 @@
   --shadow-box: 0px 1px 10px -2px rgba(0, 0, 0, 0.75);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   background-repeat: no-repeat;
   font-size: 10px;
@@ -23,9 +27,11 @@ body {
 .main-container {
   width: 110rem;
   display: grid;
-  grid-template: 10rem auto 4rem / 15rem auto;
+  grid-template: 10rem auto 10rem auto 4rem /20rem auto;
   grid-template-areas:
     "header header"
+    "search-box search-box"
+    "filter-box  main-content"
     "side-bar main-content"
     "footer footer";
   gap: 1rem;
@@ -60,43 +66,69 @@ body {
   align-items: center;
   background-color: var(--dark-gray);
   color: black;
-  max-height: 162rem;
+  height: 100rem;
   border-radius: 2rem;
+  overflow: scroll;
 }
 .country-list-title {
   font-size: 1.5rem;
 }
 .filter-box {
+  grid-area: filter-box;
   font-size: 1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-weight: 500;
+  background-color: var(--dark-gray);
 }
-.side-bar li {
+
+.filter-box select {
+  width: 15rem;
+  line-height: 5rem;
+  font-size: large;
+  border-radius: 5px;
+  font-family: var(--text-font);
+}
+.side-bar ol {
+  counter-reset: my-awesome-counter;
   list-style: none;
+}
+.side-bar ol li {
+  margin: 1rem;
+  counter-increment: my-awesome-counter;
   display: flex;
   align-items: center;
 }
+ol li::before {
+  content: counter(my-awesome-counter);
+  font-weight: bold;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  font-family: var(--text-font);
+}
 .side-bar li img {
   width: 3rem;
+  height: 2rem;
+  border-radius: 10%;
 }
 .side-bar li a {
   color: var(--gray-text1);
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   margin: 0.3rem;
+  text-decoration: none;
 }
 .main-content {
   grid-area: main-content;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .search-container {
+  grid-area: search-box;
   color: var(--gray-text1);
   background-color: var(--dark-gray);
   display: flex;
@@ -111,7 +143,7 @@ body {
   text-align: center;
   font-size: 5rem;
 }
-.main-content input {
+.search-container input {
   margin-top: 2rem;
   width: 40rem;
   line-height: 5rem;
@@ -121,11 +153,11 @@ body {
   border: none;
   transition: width 0.7s, background-color 0.8s;
 }
-.main-content input::placeholder {
+.search-container input::placeholder {
   font-size: 2rem;
 }
 
-.main-content input:hover {
+.search-container input:hover {
   background-color: cornsilk;
   width: 35rem;
   transition: width 0.7s, background-color 0.8s;
@@ -136,34 +168,35 @@ body {
   align-self: flex-start;
 }
 .subregion-container {
-  width: 100%;
+  overflow: scroll;
+  max-width: 90rem;
   height: 12rem;
   margin-top: 1rem;
   display: flex;
 }
 .general-country-container {
-  width: 11rem;
-  border: 0.4px solid var(--gray-text1);
+  width: 8rem;
+  height: 10rem;
   border-radius: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  text-align: center;
   box-shadow: 4px 9px 18px -4px rgba(0, 0, 0, 0.75);
   color: black;
   transition: width 0.7s, background-color 0.8s;
   margin-right: 1rem;
 }
 .general-country-container:hover {
-  background-color: aquamarine;
-  width: 13rem;
-  transition: width 0.7s, background-color 0.8s;
+  background-color: cornsilk;
+  font-size: 0.8rem;
+  transition: background-color 0.8s, font-size 0.3s;
 }
 
 .country-flag-container {
-  width: 8rem;
-
-  border-radius: 50%;
+  width: 7rem;
+  border-radius: 10%;
   overflow: hidden;
 }
 .country-flag-container img {
