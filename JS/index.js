@@ -1,6 +1,6 @@
 (async function load() {
   const URL =
-    "https://restcountries.eu/rest/v2/all?fields=name;capital;currencies;languages;region;population;area;flag";
+    "https://restcountries.eu/rest/v2/all?fields=name;capital;currencies;languages;region;population;area;flag;latlng;subregion";
   const $america_container = document.getElementById("Americas");
   const $europe_container = document.getElementById("Europe");
   const $asia_container = document.getElementById("Asia");
@@ -10,17 +10,41 @@
     "country-list-container"
   );
   const $other_container = document.getElementById("Other_region");
+  const $search_result_container = document.getElementById(
+    "search-result-container"
+  );
+  const $main_content = document.getElementById("main-content");
+  const $search_form = document.getElementById("search-form");
 
   async function getData(url) {
     const countries_Response = await fetch(url);
     const countries_Data = await countries_Response.json();
+    console.log(countries_Data);
     return countries_Data;
   }
 
   const all_Countries_Data = await getData(URL);
 
+  $search_form.addEventListener("submit", render_search_bar);
+
+  async function render_search_bar(event) {
+    event.preventDefault();
+    const data = new FormData($search_form);
+    try {
+      const SEARCH_NAME = find_By_Name(all_Countries_Data, data.get(`name`));
+      console.log(SEARCH_NAME);
+      const HTML_COUNTRY_String = list_Template(
+        SEARCH_NAME.flag,
+        SEARCH_NAME.name
+      );
+      const country_Element = print_Template(HTML_COUNTRY_String);
+      show_countries_Modal(country_Element);
+    } catch (error) {
+      alert("We can´t find that country, try again please");
+    }
+  }
   function main_Template(FLAG, NAME) {
-    return `<div class="general-country-container">
+    return `<div data-name="${NAME}" class="general-country-container">
             <figure class="country-flag-container">
               <img src="${FLAG}" alt="country name flag" />
             </figure>
@@ -28,40 +52,165 @@
           </div>`;
   }
   function list_Template(FLAG, NAME) {
-    return `<li class="list-item"><img src="${FLAG}" alt="country-flag"><a href="#">${NAME}</a></li>`;
+    return `<li data-name="${NAME}" class="list-item"><img src="${FLAG}" alt="country-flag"><a>${NAME}</a></li>`;
   }
+  function search_Modal_Template(
+    NAME,
+    COR1,
+    COR2,
+    FLAG,
+    CAPITAL,
+    LENGUAGE,
+    CURRENCY,
+    SYMBOL,
+    POPULATION,
+    AREA,
+    SUBREGION
+  ) {
+    return ` <div class="info123">
+    <h2 class="country-name">${NAME}</h2>
+        <div class="info-wraper">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe
+                width="460rem"
+                height="400rem"
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=${COR1}%2C%20${COR2}&t=k&z=5&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe
+              ><a href="https://google-map-generator.com"
+                >google map generator</a
+              >
+            </div>
+          </div>
+          <div class="country-details">
+            <figure class="modal-country-flag-container">
+              <img
+                src="${FLAG}"
+                alt="${NAME} flag"
+              />
+            </figure>
+            <ul class="country-details-container">
+              <li class="country-details-item">
+                <strong>Capital:</strong> ${CAPITAL}
+              </li>
+              <li class="country-details-item">
+                <strong>Lenguage Name:</strong> ${LENGUAGE}
+              </li>
+              <li class="country-details-item">
+                <strong>Currency Name:</strong> ${CURRENCY}
+              </li>
+              <li class="country-details-item">
+                <strong>Currency Symbol:</strong> ${SYMBOL}
+              </li>
+              <li class="country-details-item">
+                <strong>Population:</strong> ${POPULATION}
+              </li>
+              <li class="country-details-item">
+                <strong>Area (km2):</strong> ${AREA}
+              </li>
+              <li class="country-details-item">
+                <strong>Subregion:</strong> ${SUBREGION}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button id="close-button" class="close-button">Cerrar</button>
+        </div>`;
+  }
+  function print_Template(HTML_Country_String) {
+    const html = document.implementation.createHTMLDocument();
+    html.body.innerHTML = HTML_Country_String;
+    return html.body.children[0];
+  }
+  function clear_List(container) {
+    const myNode = container;
+    while (myNode.firstChild) {
+      myNode.removeChild(myNode.lastChild);
+    }
+  }
+  function country_Click_Listener(country_Element) {
+    country_Element.addEventListener("click", () => {
+      show_countries_Modal(country_Element);
+    });
+  }
+  function close_Event_Listener() {
+    $search_result_container.classList.remove("display");
+    $search_result_container.children[0].remove();
+    $side_list_container.classList.remove("no-pointer-events");
+    $main_content.classList.remove("no-pointer-events");
+    $(`#search-form`).unbind(`keydown`);
+  }
+  function show_countries_Modal(country_Element) {
+    $search_result_container.classList.add(`display`);
+    $side_list_container.classList.add("no-pointer-events");
+    $main_content.classList.add("no-pointer-events");
+    $(`#search-form`).keydown((e) => {
+      e.preventDefault();
+    });
+    const id = country_Element.dataset.name;
+    const modal_country = find_By_Name(all_Countries_Data, id);
+    const CURRENCY = modal_country.currencies[0].name;
+    const SYMBOL = modal_country.currencies[0].symbol;
+    const NAME = modal_country.name;
+    const CAPITAL = modal_country.capital;
+    const FLAG = modal_country.flag;
+    const POPULATION = modal_country.population.toLocaleString();
+    const LENGUAGE = modal_country.languages[0].name;
+    if (modal_country.area !== undefined) {
+      var AREA = modal_country.area.toLocaleString();
+    }
+    const SUBREGION = modal_country.subregion;
+    const COR1 = modal_country.latlng[0];
+    const COR2 = modal_country.latlng[1];
+    const HTML_MODAL_TEMPLATE = search_Modal_Template(
+      NAME,
+      COR1,
+      COR2,
+      FLAG,
+      CAPITAL,
+      LENGUAGE,
+      CURRENCY,
+      SYMBOL,
+      POPULATION,
+      AREA,
+      SUBREGION
+    );
+    const modal_Element = print_Template(HTML_MODAL_TEMPLATE);
+    $search_result_container.append(modal_Element);
+    const $close_Button = document.getElementById("close-button");
+    $close_Button.addEventListener("click", close_Event_Listener);
+  }
+  function find_By_Name(list, id) {
+    return list.find(
+      (country) => country.name.toLowerCase() === id.toLowerCase()
+    );
+  }
+
   function render_Countries_List(list, container) {
     list.forEach((country) => {
-      const CURRENCIES = country.currencies[0].name;
       const NAME = country.name;
-      const CAPITAL = country.capital;
       const FLAG = country.flag;
-      const POPULATION = country.population;
-      const LENGUAGE = country.languages[0].name;
-      const AREA = country.area;
-      const REGION = country.region;
 
       const HTML_COUNTRY_String = list_Template(FLAG, NAME);
       const country_Element = print_Template(HTML_COUNTRY_String);
       container.append(country_Element);
-      //   friend_Click_Listener(friend_Element);
+      country_Click_Listener(country_Element);
     });
   }
   function render_Country_Cards(list, container) {
     list.forEach((country) => {
-      const CURRENCIES = country.currencies[0].name;
       const NAME = country.name;
-      const CAPITAL = country.capital;
       const FLAG = country.flag;
-      const POPULATION = country.population;
-      const LENGUAGE = country.languages[0].name;
-      const AREA = country.area;
-      const REGION = country.region;
 
       const HTML_COUNTRY_String = main_Template(FLAG, NAME);
       const country_Element = print_Template(HTML_COUNTRY_String);
       container.append(country_Element);
-      //   friend_Click_Listener(friend_Element);
+      country_Click_Listener(country_Element);
     });
   }
   const americas = all_Countries_Data.filter(
@@ -94,22 +243,10 @@
     );
   });
   render_Country_Cards(other, $other_container);
-  function print_Template(HTML_Country_String) {
-    const html = document.implementation.createHTMLDocument();
-    html.body.innerHTML = HTML_Country_String;
-    return html.body.children[0];
-  }
-  function clear_List() {
-    const myNode = $side_list_container;
-    while (myNode.firstChild) {
-      myNode.removeChild(myNode.lastChild);
-    }
-  }
-
   render_Countries_List(all_Countries_Data, $side_list_container);
 
   document.querySelector("select").addEventListener("change", function (evt) {
-    clear_List();
+    clear_List($side_list_container);
     switch (evt.target.value) {
       case "alphabetical":
         const alphabetical = all_Countries_Data.sort(function (a, b) {

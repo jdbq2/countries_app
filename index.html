@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./CSS/style.css" />
     <title>Country Info App</title>
   </head>
-  <body>
+  <body id="body">
     <div class="main-container">
       <header class="header-container">
         <figure class="header-logo-container">
@@ -47,13 +47,16 @@
         <h1 class="main-content-title">
           Discover a Country, discover the world.
         </h1>
-        <input
-          type="text"
-          class="search-bar"
-          placeholder="Write a Country Name!"
-        />
+        <form action="" id="search-form">
+          <input
+            type="text"
+            class="search-bar"
+            name="name"
+            placeholder="Write a Country Name!"
+          />
+        </form>
       </div>
-      <div class="main-content">
+      <div id="main-content" class="main-content">
         <h2 class="region-title">American Countries</h2>
         <section id="Americas" class="subregion-container"></section>
         <h2 class="region-title">European Countries</h2>
@@ -67,27 +70,16 @@
         <h2 class="region-title">Other Region Countries</h2>
         <section id="Other_region" class="subregion-container"></section>
       </div>
-      <div class="search-result-container">
-        <figure class="country-flag-container">
-          <img src="" alt="country name flag" />
-        </figure>
-        <h2 class="country-name">Country Name</h2>
-        <div class="country-details">
-          <ul class="country-details-container">
-            <li class="country-details-item">Capital: capital</li>
-            <li class="country-details-item">Lenguage Name: xxxxxx</li>
-            <li class="country-details-item">Currency Name: xxxxx</li>
-            <li class="country-details-item">Population: xxxxx</li>
-            <li class="country-details-item">Area (km2): xxxxx</li>
-            <li class="country-details-item">Subregion: xxxxx</li>
-          </ul>
-        </div>
-      </div>
+      <div id="search-result-container" class="search-result-container"></div>
       <footer class="footer">
         Developed by Juan Diego Bohorquez as a basic programming challenge
       </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
     <script src="./JS/index.js"></script>
   </body>
 </html>

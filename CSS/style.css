@@ -15,6 +15,10 @@
   display: none;
 }
 
+.no-pointer-events {
+  pointer-events: none;
+}
+
 body {
   background-repeat: no-repeat;
   font-size: 10px;
@@ -101,6 +105,7 @@ body {
   counter-increment: my-awesome-counter;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 ol li::before {
   content: counter(my-awesome-counter);
@@ -187,11 +192,13 @@ ol li::before {
   color: black;
   transition: width 0.7s, background-color 0.8s;
   margin-right: 1rem;
+  cursor: pointer;
 }
 .general-country-container:hover {
-  background-color: cornsilk;
+  background-color: black;
+  color: var(--dark-gray);
   font-size: 0.8rem;
-  transition: background-color 0.8s, font-size 0.3s;
+  transition: background-color 0.8s, font-size 0.3s, color 0.5s;
 }
 
 .country-flag-container {
@@ -216,5 +223,84 @@ ol li::before {
   align-items: center;
 }
 .search-result-container {
+  position: fixed;
+  z-index: 10;
+  top: 12%;
+  left: 10%;
+  right: 10%;
+  background-color: var(--dark-gray);
+  box-shadow: var(--shadow-box);
+  border: 5px solid var(--gray-text1);
+  border-radius: 10%;
+  width: 90rem;
+  height: 50rem;
+  margin: auto auto;
   display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: display 0.5s;
+}
+
+.display {
+  display: flex;
+  transition: display 0.5s;
+}
+.info-wraper {
+  width: 80rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.country-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-country-flag-container {
+  width: 30rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.modal-country-flag-container img {
+  width: inherit;
+  object-fit: cover;
+}
+.search-result-container h2 {
+  font-size: 4rem;
+}
+.country-details-item {
+  list-style: none;
+  font-size: 2rem;
+}
+.close-button {
+  text-align: center;
+  background-color: var(--gray-text1);
+  color: var(--dark-gray);
+  width: 10rem;
+  height: 3rem;
+  border-radius: 20%;
+  font-size: 2rem;
+  margin-top: 1rem;
+  transition: background-color 0.4s, color 0.4s;
+}
+.close-button:hover {
+  background-color: chartreuse;
+  color: black;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.mapouter {
+  height: 400px;
+  width: 464px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 400px;
+  width: 464px;
 }
