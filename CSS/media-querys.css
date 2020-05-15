@@ -1,0 +1,387 @@
+/* Desktop PC */
+@media screen and (max-width: 1750px) {
+  html {
+    font-size: 14px;
+  }
+  .search-result-container {
+    height: 45rem;
+  }
+  .country-name {
+    font-size: 1.3rem;
+  }
+  .autocomplete-items {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 1560px) {
+  html {
+    font-size: 13px;
+  }
+}
+/* Laptop */
+@media screen and (max-width: 1450px) {
+  html {
+    font-size: 12px;
+  }
+  .filter-box select {
+    line-height: initial;
+  }
+}
+/* Ipad pro Landscape */
+@media screen and (max-width: 1370px) {
+  html {
+    font-size: 11px;
+  }
+}
+/* Ipad pro portrait*/
+@media screen and (max-width: 1025px) {
+  html {
+    font-size: 11px;
+  }
+
+  .main-container {
+    width: 90rem;
+    display: grid;
+    grid-template: 10rem auto auto auto auto 4rem / auto;
+    grid-template-areas:
+      "header "
+      "search-box "
+      " main-content"
+      "filter-box"
+      "side-bar"
+      "footer";
+    gap: 1rem;
+  }
+  .side-bar {
+    height: 36rem;
+  }
+  .search-result-container {
+    width: 70rem;
+    height: 90rem;
+  }
+  .info-wraper {
+    flex-direction: column-reverse;
+  }
+  .mapouter {
+    margin-top: 1rem;
+  }
+}
+/* Ipad Landscape */
+@media screen and (max-height: 813px) {
+  .search-result-container {
+    height: 55rem;
+    overflow: scroll;
+  }
+  .info-wraper {
+    width: inherit;
+  }
+  .info123 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: inherit;
+  }
+}
+/* Special Case Lenovo idea pad 330s */
+@media screen and (max-width: 1370px) and (max-height: 760px) {
+  .search-result-container {
+    height: 45rem;
+  }
+}
+/* -------------------------------------------------------------------------------------------------- */
+/* Iphone X landscape*/
+@media screen and (max-width: 812px) and (max-height: 375px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 100rem;
+  }
+  .subregion-container {
+    max-width: 100rem;
+  }
+  .search-result-container {
+    height: 34rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 250px;
+    width: 464px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 464px;
+  }
+}
+/* Ipad Portrait */
+@media screen and (max-width: 769px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 90rem;
+  }
+  .subregion-container {
+    max-width: 90rem;
+  }
+  .search-result-container {
+    height: 100rem;
+  }
+}
+/* Iphone  6,7,8 Plus landscape*/
+@media screen and (max-width: 754px) and (max-height: 425px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 90rem;
+  }
+  .subregion-container {
+    max-width: 90rem;
+  }
+  .search-result-container {
+    height: 100rem;
+  }
+  .search-result-container {
+    height: 39rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 250px;
+    width: 464px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 464px;
+  }
+}
+/* Iphone 6,7,8 Landscape */
+@media screen and (max-width: 668px) and (max-height: 376px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 82rem;
+  }
+  .subregion-container {
+    max-width: 82rem;
+  }
+  .search-result-container {
+    height: 100rem;
+  }
+  .search-result-container {
+    height: 36rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 250px;
+    width: 464px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 464px;
+  }
+}
+/* Iphone 5 Landscape*/
+@media screen and (max-width: 569px) and (max-height: 320px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 70rem;
+  }
+  .subregion-container {
+    max-width: 70rem;
+  }
+  .search-result-container {
+    height: 30rem;
+    width: 60rem;
+    overflow: scroll;
+    top: 12%;
+    left: 5%;
+  }
+  .mapouter {
+    height: 250px;
+    width: 464px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 464px;
+  }
+}
+/* Iphone 4 Landscape */
+@media screen and (max-width: 480px) and (max-height: 320px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 59rem;
+  }
+  .subregion-container {
+    max-width: 59rem;
+  }
+  .search-result-container {
+    height: 26rem;
+    width: 45rem;
+    overflow: scroll;
+    top: 12%;
+    left: 5%;
+  }
+  .mapouter {
+    height: 250px;
+    width: 300px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 250px;
+    width: 300px;
+  }
+}
+/* Iphone  6,7,8 Plus Portrait*/
+@media screen and (max-width: 425px) and (max-height: 754px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 50rem;
+  }
+  .subregion-container {
+    max-width: 50rem;
+  }
+  .search-result-container {
+    height: 100rem;
+  }
+  .search-result-container {
+    height: 76rem;
+    width: 37rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 400px;
+    width: 250px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 400px;
+    width: 250px;
+  }
+}
+/* Iphone X portrait*/
+@media screen and (max-width: 375px) and (max-height: 812px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 40rem;
+  }
+  .subregion-container {
+    max-width: 40rem;
+  }
+  .search-result-container {
+    height: 80rem;
+    width: 37rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 400px;
+    width: 250px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 400px;
+    width: 250px;
+  }
+}
+/* Iphone 6,7,8 Portrait */
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 40rem;
+  }
+  .subregion-container {
+    max-width: 40rem;
+  }
+  .search-result-container {
+    height: 65rem;
+    width: 37rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 400px;
+    width: 250px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 400px;
+    width: 250px;
+  }
+}
+/* Iphone 5 Portrait*/
+@media screen and (max-width: 320px) and (max-height: 569px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 38rem;
+  }
+  .subregion-container {
+    max-width: 38rem;
+  }
+  .search-result-container {
+    height: 54rem;
+    width: 31rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 400px;
+    width: 250px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 400px;
+    width: 250px;
+  }
+}
+/* Iphone 4 Portrait*/
+@media screen and (max-width: 320px) and (max-height: 481px) {
+  html {
+    font-size: 8px;
+  }
+  .main-container {
+    width: 38rem;
+  }
+  .subregion-container {
+    max-width: 38rem;
+  }
+  .search-result-container {
+    height: 45rem;
+    width: 31rem;
+    overflow: scroll;
+  }
+  .mapouter {
+    height: 400px;
+    width: 250px;
+  }
+  .gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    height: 400px;
+    width: 250px;
+  }
+}
+/* -------------------------------------------------------------------------------------------------- */

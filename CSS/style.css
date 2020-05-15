@@ -19,10 +19,10 @@
 .no-pointer-events {
   pointer-events: none;
 }
-
+html {
+  font-size: 15px;
+}
 body {
-  background-repeat: no-repeat;
-  font-size: 10px;
   display: flex;
   justify-content: center;
   color: var(--gray-text1);
@@ -93,7 +93,7 @@ body {
 .filter-box select {
   width: 15rem;
   line-height: 5rem;
-  font-size: large;
+  font-size: 1rem;
   border-radius: 5px;
   font-family: var(--text-font);
 }
@@ -186,14 +186,15 @@ ol li::before {
 .subregion-container {
   overflow: scroll;
   max-width: 90rem;
-  height: 12rem;
+  height: 15rem;
   margin-top: 1rem;
   display: flex;
 }
 .general-country-container {
-  width: 8rem;
-  height: 10rem;
+  width: 10rem;
+  height: 13rem;
   border-radius: 10%;
+  font-size: 0.6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -201,7 +202,7 @@ ol li::before {
   text-align: center;
   box-shadow: 4px 9px 18px -4px rgba(0, 0, 0, 0.75);
   color: black;
-  transition: width 0.7s, background-color 0.8s;
+  transition: background-color 0.8s;
   margin-right: 1rem;
   cursor: pointer;
 }
@@ -223,6 +224,7 @@ ol li::before {
 }
 
 .general-country-container h3 {
+  font-size: 1rem;
   margin-top: 1rem;
 }
 .footer {
@@ -234,6 +236,7 @@ ol li::before {
   align-items: center;
 }
 .search-result-container {
+  padding: 1rem;
   position: fixed;
   z-index: 10;
   top: 12%;
@@ -255,7 +258,11 @@ ol li::before {
 
 .display {
   display: flex;
-  transition: display 0.5s;
+}
+.info123 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .info-wraper {
   width: 80rem;
@@ -263,6 +270,7 @@ ol li::before {
   align-items: center;
   justify-content: space-evenly;
 }
+
 .country-details {
   display: flex;
   flex-direction: column;
@@ -281,7 +289,15 @@ ol li::before {
   object-fit: cover;
 }
 .search-result-container h2 {
-  font-size: 4rem;
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+strong {
+  color: var(--gray-text1);
 }
 .country-details-item {
   list-style: none;
@@ -297,12 +313,14 @@ ol li::before {
   font-size: 2rem;
   margin-top: 1rem;
   transition: background-color 0.4s, color 0.4s;
+  cursor: pointer;
 }
 .close-button:hover {
-  background-color: var(--blue-color);
+  background-color: #ff0017;
   color: black;
   transition: background-color 0.4s, color 0.4s;
 }
+/* ----------------------------------------------------------------------------------------------- */
 
 .mapouter {
   height: 400px;

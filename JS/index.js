@@ -72,7 +72,7 @@
     SUBREGION
   ) {
     return ` <div class="info123">
-    <h2 class="country-name">${NAME}</h2>
+    <h2 class="modal-country-name">${NAME}</h2>
         <div class="info-wraper">
           <div class="mapouter">
             <div class="gmap_canvas">
