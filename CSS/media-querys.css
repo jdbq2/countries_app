@@ -191,7 +191,7 @@
 /* Iphone 5 Landscape*/
 @media screen and (max-width: 569px) and (max-height: 320px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
   .main-container {
     width: 70rem;
@@ -220,7 +220,7 @@
 /* Iphone 4 Landscape */
 @media screen and (max-width: 480px) and (max-height: 320px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
   .main-container {
     width: 59rem;
@@ -249,7 +249,7 @@
 /* Iphone  6,7,8 Plus Portrait*/
 @media screen and (max-width: 425px) and (max-height: 754px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
   .main-container {
     width: 50rem;
@@ -306,7 +306,7 @@
 /* Iphone 6,7,8 Portrait */
 @media screen and (max-width: 375px) and (max-height: 667px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
   .main-container {
     width: 40rem;
@@ -333,7 +333,7 @@
 /* Iphone 5 Portrait*/
 @media screen and (max-width: 320px) and (max-height: 569px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
   .main-container {
     width: 38rem;
@@ -360,7 +360,7 @@
 /* Iphone 4 Portrait*/
 @media screen and (max-width: 320px) and (max-height: 481px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
   .main-container {
     width: 38rem;
