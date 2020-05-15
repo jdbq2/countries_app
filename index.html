@@ -47,12 +47,21 @@
         <h1 class="main-content-title">
           Discover a Country, discover the world.
         </h1>
-        <form action="" id="search-form">
+        <form action="" class="search-form" id="search-form" autocomplete="off">
+          <div>
+            <input
+              id="search-input"
+              type="text"
+              class="search-bar"
+              name="name"
+              placeholder="Write a Country Name!"
+            />
+          </div>
           <input
-            type="text"
-            class="search-bar"
-            name="name"
-            placeholder="Write a Country Name!"
+            id="submit-button"
+            class="search-button"
+            type="submit"
+            value="Let´s Go!"
           />
         </form>
       </div>
@@ -80,6 +89,7 @@
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
+    <script src="./JS/autocomplete.js"></script>
     <script src="./JS/index.js"></script>
   </body>
 </html>

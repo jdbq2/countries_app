@@ -15,6 +15,8 @@
   );
   const $main_content = document.getElementById("main-content");
   const $search_form = document.getElementById("search-form");
+  const $search_Input = document.getElementById("search-input");
+  const $submit_button = document.getElementById("submit-button");
 
   async function getData(url) {
     const countries_Response = await fetch(url);
@@ -29,6 +31,7 @@
 
   async function render_search_bar(event) {
     event.preventDefault();
+
     const data = new FormData($search_form);
     try {
       const SEARCH_NAME = find_By_Name(all_Countries_Data, data.get(`name`));
@@ -42,6 +45,7 @@
     } catch (error) {
       alert("We can´t find that country, try again please");
     }
+    $search_form.reset();
   }
   function main_Template(FLAG, NAME) {
     return `<div data-name="${NAME}" class="general-country-container">
@@ -304,4 +308,11 @@
         return render_Countries_List(other, $side_list_container);
     }
   });
+  const countries_Name_Array = [];
+
+  for (let i = 0; i < all_Countries_Data.length; i++) {
+    countries_Name_Array.push(all_Countries_Data[i].name);
+  }
+
+  autocomplete($search_Input, countries_Name_Array);
 })();
