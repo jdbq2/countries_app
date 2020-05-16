@@ -119,12 +119,14 @@
   .mapouter {
     height: 250px;
     width: 464px;
+    justify-self: center;
   }
   .gmap_canvas {
     overflow: hidden;
     background: none !important;
     height: 250px;
     width: 464px;
+    justify-self: center;
   }
 }
 /* Ipad Portrait */
@@ -283,6 +285,7 @@
     width: 37rem;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+    top: 5%;
   }
   .mapouter {
     height: 400px;
