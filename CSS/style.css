@@ -128,7 +128,7 @@ body {
 
 .filter-box select {
   width: 15rem;
-  line-height: 5rem;
+  line-height: 2rem;
   font-size: 1rem;
   border-radius: 5px;
   font-family: var(--text-font);
