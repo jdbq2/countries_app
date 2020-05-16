@@ -78,8 +78,8 @@
           <div class="mapouter">
             <div class="gmap_canvas">
               <iframe
-                width="460rem"
-                height="400rem"
+                width="100%"
+                height="100%"
                 id="gmap_canvas"
                 src="https://maps.google.com/maps?q=${COR1}%2C%20${COR2}&t=k&z=5&ie=UTF8&iwloc=&output=embed"
                 frameborder="0"

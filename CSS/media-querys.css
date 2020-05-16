@@ -51,6 +51,7 @@
       "side-bar"
       "footer";
     gap: 1rem;
+    align-content: center;
   }
   .side-bar {
     height: 36rem;
@@ -69,10 +70,12 @@
   .mapouter {
     grid-area: map;
     margin-top: 1rem;
+    justify-self: center;
   }
 
   .country-details {
     grid-area: info;
+    justify-self: center;
   }
 }
 /* Ipad Landscape */
