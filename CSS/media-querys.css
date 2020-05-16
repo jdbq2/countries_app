@@ -71,6 +71,7 @@
   .search-result-container {
     height: 55rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .info-wraper {
     width: inherit;
@@ -103,6 +104,7 @@
   .search-result-container {
     height: 34rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 250px;
@@ -147,6 +149,7 @@
   .search-result-container {
     height: 39rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 250px;
@@ -176,6 +179,7 @@
   .search-result-container {
     height: 36rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 250px;
@@ -191,7 +195,7 @@
 /* Iphone 5 Landscape*/
 @media screen and (max-width: 569px) and (max-height: 320px) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
   .main-container {
     width: 70rem;
@@ -203,6 +207,7 @@
     height: 30rem;
     width: 60rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     top: 12%;
     left: 5%;
   }
@@ -220,7 +225,7 @@
 /* Iphone 4 Landscape */
 @media screen and (max-width: 480px) and (max-height: 320px) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
   .main-container {
     width: 59rem;
@@ -232,6 +237,7 @@
     height: 26rem;
     width: 45rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     top: 12%;
     left: 5%;
   }
@@ -249,7 +255,7 @@
 /* Iphone  6,7,8 Plus Portrait*/
 @media screen and (max-width: 425px) and (max-height: 754px) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
   .main-container {
     width: 50rem;
@@ -264,6 +270,7 @@
     height: 76rem;
     width: 37rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 400px;
@@ -291,6 +298,7 @@
     height: 80rem;
     width: 37rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 400px;
@@ -306,7 +314,7 @@
 /* Iphone 6,7,8 Portrait */
 @media screen and (max-width: 375px) and (max-height: 667px) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
   .main-container {
     width: 40rem;
@@ -318,6 +326,7 @@
     height: 65rem;
     width: 37rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 400px;
@@ -333,7 +342,7 @@
 /* Iphone 5 Portrait*/
 @media screen and (max-width: 320px) and (max-height: 569px) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
   .main-container {
     width: 38rem;
@@ -345,6 +354,7 @@
     height: 54rem;
     width: 31rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 400px;
@@ -360,7 +370,7 @@
 /* Iphone 4 Portrait*/
 @media screen and (max-width: 320px) and (max-height: 481px) {
   html {
-    font-size: 7px;
+    font-size: 8px;
   }
   .main-container {
     width: 38rem;
@@ -372,6 +382,7 @@
     height: 45rem;
     width: 31rem;
     overflow: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .mapouter {
     height: 400px;
