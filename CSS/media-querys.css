@@ -26,6 +26,9 @@
   .filter-box select {
     line-height: initial;
   }
+  .search-result-container {
+    height: 50rem;
+  }
 }
 /* Ipad pro Landscape */
 @media screen and (max-width: 1370px) {
@@ -88,12 +91,6 @@
   }
   .info-wraper {
     width: inherit;
-  }
-  .info123 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: inherit;
   }
 }
 /* Special Case Lenovo idea pad 330s */
