@@ -17,6 +17,7 @@
   const $search_form = document.getElementById("search-form");
   const $search_Input = document.getElementById("search-input");
   const $submit_button = document.getElementById("submit-button");
+  const $body = document.getElementById("body");
 
   async function getData(url) {
     const countries_Response = await fetch(url);
@@ -143,6 +144,7 @@
     });
   }
   function close_Event_Listener() {
+    $body.classList.remove(`position-fixed`);
     $search_result_container.classList.remove("display");
     $search_result_container.children[0].remove();
     $side_list_container.classList.remove("no-pointer-events");
@@ -150,6 +152,7 @@
     $(`#search-form`).unbind(`keydown`);
   }
   function show_countries_Modal(country_Element) {
+    $body.classList.add(`position-fixed`);
     $search_result_container.classList.add(`display`);
     $side_list_container.classList.add("no-pointer-events");
     $main_content.classList.add("no-pointer-events");

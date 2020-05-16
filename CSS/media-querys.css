@@ -267,7 +267,7 @@
     height: 100rem;
   }
   .search-result-container {
-    height: 76rem;
+    height: 70rem;
     width: 37rem;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
@@ -323,7 +323,7 @@
     max-width: 40rem;
   }
   .search-result-container {
-    height: 65rem;
+    height: 60rem;
     width: 37rem;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
