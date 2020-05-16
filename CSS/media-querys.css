@@ -26,6 +26,9 @@
   .filter-box select {
     line-height: initial;
   }
+  .search-result-container {
+    height: 50rem;
+  }
 }
 /* Ipad pro Landscape */
 @media screen and (max-width: 1370px) {
