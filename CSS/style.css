@@ -453,7 +453,8 @@ strong {
   height: 3rem;
   border-radius: 20%;
   font-size: 2rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   -webkit-transition: background-color 0.4s, color 0.4s;
   -o-transition: background-color 0.4s, color 0.4s;
   transition: background-color 0.4s, color 0.4s;

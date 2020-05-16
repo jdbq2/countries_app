@@ -60,10 +60,19 @@
     height: 90rem;
   }
   .info-wraper {
-    flex-direction: column-reverse;
+    display: grid;
+    grid-template: auto auto / auto;
+    grid-template-areas:
+      "info"
+      "map";
   }
   .mapouter {
+    grid-area: map;
     margin-top: 1rem;
+  }
+
+  .country-details {
+    grid-area: info;
   }
 }
 /* Ipad Landscape */
@@ -72,6 +81,7 @@
     height: 55rem;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
+    top: 9%;
   }
   .info-wraper {
     width: inherit;
@@ -129,6 +139,8 @@
     max-width: 90rem;
   }
   .search-result-container {
+    top: 10%;
+    left: 5%;
     height: 100rem;
   }
 }
