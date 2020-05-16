@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v7.0.29,
-* Autoprefixer: v9.7.6
-* Browsers: last 4 version
-*/
-
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +8,7 @@
   --basic-font: "Source Sans Pro", sans-serif;
   --gray-text1: #222222;
   --dark-gray: #f2f2f2;
-  --blue-color: DodgerBlue;
+  --blue-color: #1e90ff;
   --shadow-box: 0px 1px 10px -2px rgba(0, 0, 0, 0.75);
 }
 
@@ -26,9 +19,12 @@
 .no-pointer-events {
   pointer-events: none;
 }
+
 html {
   font-size: 15px;
+  scrollbar-color: transparent transparent;
 }
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
