@@ -54,6 +54,7 @@ body {
     "side-bar main-content"
     "footer footer";
   gap: 1rem;
+  background-color: transparent;
 }
 
 .header-container {
@@ -262,6 +263,7 @@ ol li::before {
   margin-left: 0.5rem;
   -ms-flex-item-align: start;
   align-self: flex-start;
+  background-color: transparent;
 }
 .subregion-container {
   overflow: scroll;
