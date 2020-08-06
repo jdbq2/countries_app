@@ -1,2 +1,3 @@
-# jdbq2.github.io
-JS Countries SPA
+# Countries App
+JS Countries
+https://jdbq2.github.io/countries_app/
